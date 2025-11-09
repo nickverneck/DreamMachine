@@ -14,7 +14,7 @@ This document outlines the development tasks for creating the DreamMachine PWA u
 | 7  | **PWA: Service Worker** <br> Ensure the service worker is correctly configured for offline caching. | Done |
 | 8  | **Data: Create `frequencies.json`** <br> Create the JSON file in the `public` directory with presets for binaural and isochronic tones. | Done |
 | 9  | **Core Scene: Create VR Canvas** <br> Set up the main `<Canvas>` component from RTF and add the `<VRButton />` for entering VR mode. | Done |
-| 10 | **Core Scene: Create Sky Sphere** <br> Build a React component for a large sphere with a material rendered on the inside (`THREE.BackSide`). | To Do |
+| 10 | **Core Scene: Create Sky Sphere** <br> Build a React component for a large sphere with a material rendered on the inside (`THREE.BackSide`). | Done |
 | 11 | **Audio: Create Audio Manager** <br> Develop a service or hook (`useAudio`) to manage the Web Audio API `AudioContext` and oscillators. | Done |
 | 12 | **Audio: Implement Binaural Beats** <br> Create a function within the audio manager to generate binaural beats from a base and beat frequency. | Done |
 | 13 | **Audio: Implement Isochronic Tones** <br> Create a function to generate isochronic tones by pulsing a `GainNode` at a specific frequency. | Done |
