@@ -7,7 +7,12 @@ const BASE_COLOR = '#000000'
 const PULSE_COLOR = '#ffffff'
 const SKY_RADIUS = 500
 
-export function SkySphere({ activePreset }: { activePreset: FrequencyPreset | null }) {
+interface SkySphereProps {
+  activePreset: FrequencyPreset | null
+  pulseEnabled: boolean
+}
+
+export function SkySphere({ activePreset, pulseEnabled }: SkySphereProps) {
   const meshRef = useRef<THREE.Mesh>(null)
   const materialRef = useRef<THREE.MeshBasicMaterial>(null)
 
@@ -21,7 +26,7 @@ export function SkySphere({ activePreset }: { activePreset: FrequencyPreset | nu
         ? activePreset.pulseFrequency
         : activePreset?.beatFrequency
 
-    if (pulseFrequency && pulseFrequency > 0) {
+    if (pulseEnabled && pulseFrequency && pulseFrequency > 0) {
       const pulseTime = 1 / pulseFrequency
       const cycle = (clock.elapsedTime % pulseTime) / pulseTime
       materialRef.current.color.set(cycle < 0.5 ? PULSE_COLOR : BASE_COLOR)
