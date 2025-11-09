@@ -5,19 +5,19 @@ This document outlines the development tasks for creating the DreamMachine PWA u
 
 | ID | Task | Status |
 |:---|:---|:---|
-| 1  | **Project Setup: Initialize React + Vite** <br> Create a new React project using Vite with the TypeScript template. | To Do |
-| 2  | **Project Setup: Install Dependencies** <br> Install `three`, `@react-three/fiber`, `@react-three/drei`, and `vite-plugin-pwa`. | To Do |
-| 3  | **Project Setup: Basic Cleanup** <br> Remove boilerplate code and CSS from the default Vite template. | To Do |
-| 4  | **PWA: Configuration** <br> Set up `vite-plugin-pwa` in the `vite.config.ts` file. | To Do |
-| 5  | **PWA: Create `manifest.json`** <br> Define app name, icons, start URL, display mode (`fullscreen`), and theme colors. | To Do |
-| 6  | **PWA: Create Icons** <br> Add app icons of various sizes to the `public` directory as specified in the manifest. | To Do |
-| 7  | **PWA: Service Worker** <br> Ensure the service worker is correctly configured for offline caching. | To Do |
-| 8  | **Data: Create `frequencies.json`** <br> Create the JSON file in the `public` directory with presets for binaural and isochronic tones. | To Do |
-| 9  | **Core Scene: Create VR Canvas** <br> Set up the main `<Canvas>` component from RTF and add the `<VRButton />` for entering VR mode. | To Do |
+| 1  | **Project Setup: Initialize React + Vite** <br> Create a new React project using Vite with the TypeScript template. | Done |
+| 2  | **Project Setup: Install Dependencies** <br> Install `three`, `@react-three/fiber`, `@react-three/drei`, and `vite-plugin-pwa`. | Done |
+| 3  | **Project Setup: Basic Cleanup** <br> Remove boilerplate code and CSS from the default Vite template. | Done |
+| 4  | **PWA: Configuration** <br> Set up `vite-plugin-pwa` in the `vite.config.ts` file. | Done |
+| 5  | **PWA: Create `manifest.json`** <br> Define app name, icons, start URL, display mode (`fullscreen`), and theme colors. | Done |
+| 6  | **PWA: Create Icons** <br> Add app icons of various sizes to the `public` directory as specified in the manifest. | Done |
+| 7  | **PWA: Service Worker** <br> Ensure the service worker is correctly configured for offline caching. | Done |
+| 8  | **Data: Create `frequencies.json`** <br> Create the JSON file in the `public` directory with presets for binaural and isochronic tones. | Done |
+| 9  | **Core Scene: Create VR Canvas** <br> Set up the main `<Canvas>` component from RTF and add the `<VRButton />` for entering VR mode. | Done |
 | 10 | **Core Scene: Create Sky Sphere** <br> Build a React component for a large sphere with a material rendered on the inside (`THREE.BackSide`). | To Do |
-| 11 | **Audio: Create Audio Manager** <br> Develop a service or hook (`useAudio`) to manage the Web Audio API `AudioContext` and oscillators. | To Do |
-| 12 | **Audio: Implement Binaural Beats** <br> Create a function within the audio manager to generate binaural beats from a base and beat frequency. | To Do |
-| 13 | **Audio: Implement Isochronic Tones** <br> Create a function to generate isochronic tones by pulsing a `GainNode` at a specific frequency. | To Do |
+| 11 | **Audio: Create Audio Manager** <br> Develop a service or hook (`useAudio`) to manage the Web Audio API `AudioContext` and oscillators. | Done |
+| 12 | **Audio: Implement Binaural Beats** <br> Create a function within the audio manager to generate binaural beats from a base and beat frequency. | Done |
+| 13 | **Audio: Implement Isochronic Tones** <br> Create a function to generate isochronic tones by pulsing a `GainNode` at a specific frequency. | Done |
 | 14 | **UI: Build Control Panel** <br> Create UI components (e.g., dropdown, play/pause button, volume slider) to control the audio. | To Do |
 | 15 | **State Management: Implement Core Logic** <br> Use React hooks (`useState`, `useContext`) to manage the app's state (current preset, play/pause status, etc.). | To Do |
 | 16 | **Integration: Load Frequency Data** <br> Fetch `frequencies.json` and populate the UI controls. | To Do |
