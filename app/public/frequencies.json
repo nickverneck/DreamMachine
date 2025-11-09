@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Alpha Wave Focus",
+    "type": "binaural",
+    "baseFrequency": 136.1,
+    "beatFrequency": 10,
+    "description": "Promotes a state of relaxed focus and learning."
+  },
+  {
+    "name": "Theta Meditation",
+    "type": "isochronic",
+    "baseFrequency": 100,
+    "pulseFrequency": 7,
+    "description": "Encourages deep meditation and creativity."
+  },
+  {
+    "name": "Delta Wave Sleep",
+    "type": "binaural",
+    "baseFrequency": 100,
+    "beatFrequency": 3,
+    "description": "Aids in deep, restorative sleep."
+  }
+]
