@@ -1,11 +1,12 @@
 import { useState, useEffect, FormEvent } from 'react'
-import { useAudio } from './useAudio'
 import type { FrequencyPreset } from './types'
+import type { useAudio } from './useAudio'
 
 type ControlPanelProps = {
   setActivePreset: (preset: FrequencyPreset | null) => void
   pulseEnabled: boolean
   onPulseToggle: (enabled: boolean) => void
+  audio: ReturnType<typeof useAudio>
 }
 
 const DEFAULT_CUSTOM_PRESET: FrequencyPreset & { beatFrequency: number; pulseFrequency: number } = {
@@ -16,14 +17,14 @@ const DEFAULT_CUSTOM_PRESET: FrequencyPreset & { beatFrequency: number; pulseFre
   pulseFrequency: 6,
 }
 
-export function ControlPanel({ setActivePreset, pulseEnabled, onPulseToggle }: ControlPanelProps) {
+export function ControlPanel({ setActivePreset, pulseEnabled, onPulseToggle, audio }: ControlPanelProps) {
   const [presets, setPresets] = useState<FrequencyPreset[]>([])
   const [selectedPreset, setSelectedPreset] = useState<string>('')
   const [isPlaying, setIsPlaying] = useState(false)
   const [showCustomForm, setShowCustomForm] = useState(false)
   const [customPreset, setCustomPreset] = useState(DEFAULT_CUSTOM_PRESET)
   const [customError, setCustomError] = useState<string | null>(null)
-  const { playBinaural, playIsochronic, stop } = useAudio()
+  const { playBinaural, playIsochronic, stop } = audio
 
   useEffect(() => {
     fetch('/frequencies.json')
