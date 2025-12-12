@@ -114,11 +114,17 @@ export const useAudio = () => {
       const lfoAttenuation = context.createGain()
       lfoAttenuation.gain.value = 0.5
 
+      // Smooth the square edges to avoid audible clicks at each pulse transition.
+      const lfoSmoother = context.createBiquadFilter()
+      lfoSmoother.type = 'lowpass'
+      lfoSmoother.frequency.value = Math.max(pulseFrequency * 6, 60)
+
       const lfoOffset = context.createConstantSource()
       lfoOffset.offset.value = 0.5
 
       lfo.connect(lfoAttenuation)
-      lfoAttenuation.connect(amplitudeGain.gain)
+      lfoAttenuation.connect(lfoSmoother)
+      lfoSmoother.connect(amplitudeGain.gain)
       lfoOffset.connect(amplitudeGain.gain)
 
       carrierOsc.connect(amplitudeGain).connect(masterGain)
@@ -127,7 +133,7 @@ export const useAudio = () => {
       lfo.start()
       lfoOffset.start()
 
-      managedNodesRef.current = [carrierOsc, amplitudeGain, lfo, lfoAttenuation, lfoOffset]
+      managedNodesRef.current = [carrierOsc, amplitudeGain, lfo, lfoAttenuation, lfoSmoother, lfoOffset]
       currentModeRef.current = 'isochronic'
     },
     [ensureContext, tearDownNodes],
